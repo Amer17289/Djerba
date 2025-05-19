@@ -195,6 +195,26 @@
         color: #ff6f00;
       }
     }
+    @media (max-width: 768px) {
+  .gallery-3d-container {
+    animation: none;
+    transform: rotateY(0deg) !important;
+  }
+
+  .gallery-3d img {
+    position: relative;
+    transform: none !important;
+    margin: 0.5rem;
+  }
+
+  .gallery-3d {
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-flow: row wrap;
+    gap: 1rem;
+  }
+}
+
   </style>
 </head>
 <body>
