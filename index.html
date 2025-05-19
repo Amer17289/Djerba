@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>جزيرة جربة</title>
+
+  <!-- خط عربي جميل -->
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet" />
+
+  <style>
+    .amer-box {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2rem;
+  color: #ffffff;
+  background: linear-gradient(to right, #00bcd4, #0097a7);
+  padding: 0.4rem 1rem;
+  border-radius: 25px;
+  box-shadow: 0 0 15px #00bcd4, 0 0 25px #0097a7;
+  animation: pulse 2s infinite ease-in-out;
+  font-weight: bold;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 5px #00bcd4, 0 0 10px #0097a7;
+  }
+  50% {
+    box-shadow: 0 0 15px #00bcd4, 0 0 30px #0097a7;
+  }
+  100% {
+    box-shadow: 0 0 5px #00bcd4, 0 0 10px #0097a7;
+  }
+}
+
+
+    :root {
+      --primary: #00bcd4;
+      --secondary: #0097a7;
+      --accent: #ffc107;
+      --text-light: #f1f1f1;
+      --bg-dark: #121212;
+    }
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      color: var(--text-light);
+      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+      scroll-behavior: smooth;
+    }
+    header {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(8px);
+    }
+    header h1 {
+      margin: 0;
+      color: var(--primary);
+      font-size: 1.5rem;
+    }
+    nav a {
+      color: var(--text-light);
+      margin-left: 1rem;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    .hero {
+      height: 90vh;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(15, 32, 39, 0.9)),
+        url('images/djerba1.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      color: var(--accent);
+      animation: fadeInDown 1.5s ease-out;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: auto;
+      animation: fadeIn 1.5s ease-in;
+    }
+    section h2 {
+      color: var(--primary);
+      border-bottom: 2px solid var(--secondary);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* تخصيص قسم "عن جربة" و"التاريخ" */
+    .arabic-section {
+      font-family: 'Amiri', serif;
+      color: #ffd54f;
+      line-height: 1.8;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s, background 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      background-color: #2a2a2a;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* 3D Gallery Styles */
+    .gallery-3d {
+      perspective: 1000px;
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+    }
+    .gallery-3d-container {
+      width: 300px;
+      height: 300px;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: rotate 20s infinite linear;
+    }
+    .gallery-3d img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
+    }
+    .gallery-3d img:nth-child(1) { transform: rotateY(0deg) translateZ(400px); }
+    .gallery-3d img:nth-child(2) { transform: rotateY(60deg) translateZ(400px); }
+    .gallery-3d img:nth-child(3) { transform: rotateY(120deg) translateZ(400px); }
+    .gallery-3d img:nth-child(4) { transform: rotateY(180deg) translateZ(400px); }
+    .gallery-3d img:nth-child(5) { transform: rotateY(240deg) translateZ(400px); }
+    .gallery-3d img:nth-child(6) { transform: rotateY(300deg) translateZ(400px); }
+
+    @keyframes rotate {
+      from { transform: rotateY(0deg); }
+      to { transform: rotateY(360deg); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #0f2027;
+      color: #bbb;
+      font-weight: bold;
+      animation: glow 3s ease-in-out infinite alternate;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 5px #ffc107, 0 0 10px #ffc107, 0 0 20px #ffc107;
+        color: #ffc107;
+      }
+      100% {
+        text-shadow: 0 0 20px #ff6f00, 0 0 30px #ff6f00, 0 0 40px #ff6f00;
+        color: #ff6f00;
+      }
+    }
+  </style>
+</head>
+<body>
+  <audio id="bg-music" autoplay loop>
+  <source src="music1.mp3" type="audio/mpeg" />
+  متصفحك لا يدعم تشغيل الصوت.
+</audio>
+
+<button id="music-toggle-btn" onclick="toggleMusic()" 
+  style="position: fixed; bottom: 20px; left: 20px; background: var(--primary); border: none; color: white; 
+         padding: 10px 15px; border-radius: 50%; font-size: 1.5rem; cursor: pointer; box-shadow: 0 0 10px var(--primary);">
+  🔊
+</button>
+
+   <header>
+    <h1>جربة الجميلة</h1>
+    <div class="amer-box">amer</div>
+
+    <nav>
+      <a href="#about">عن جربة</a>
+      <a href="#history">التاريخ</a>
+      <a href="#attractions">المعالم</a>
+      <a href="#gallery">صور</a>
+      <a href="#contact">اتصل بنا</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>مرحبا بكم في جزيرة الأحلام جربة</h2>
+  </section>
+
+  <section id="about" class="arabic-section">
+    <h2>عن جربة</h2>
+    <p>
+      جربة هي أكبر جزيرة في شمال أفريقيا تقع في الجنوب الشرقي لتونس وتتميز بطابعها الأندلسي وجمال طبيعتها الخلابة.
+      تعرف بشواطئها الرملية الهادئة ومناخها المعتدل طوال السنة، مما يجعلها وجهة مفضلة للسياح من جميع أنحاء العالم.
+    </p>
+    <p>
+      تشتهر جربة بتعايش الثقافات والأديان، حيث يعيش المسلمون واليهود والمسيحيون في انسجام منذ قرون.
+      وهي معروفة أيضاً بمنتجاتها اليدوية التقليدية مثل الفخار والنسيج والصناعات الجلدية.
+      كما تتميز بأطباقها التقليدية الشهية مثل الكسكس و"الملثوث".
+    </p>
+  </section>
+
+  <section id="history" class="arabic-section">
+    <h2>التاريخ</h2>
+    <p>
+      تاريخ جربة يمتد إلى العصور القديمة، حيث كانت مركزاً مهماً للفينيقيين ثم الرومان.
+      وقد ذكرها المؤرخون اليونانيون بأنها "جزيرة اللوتس"، والتي ذُكرت أيضاً في ملحمة الأوديسة لهوميروس.
+    </p>
+    <p>
+      خلال العصور الإسلامية، أصبحت جربة مركزاً تجارياً وثقافياً هاماً بفضل موقعها الاستراتيجي.
+      شُيّدت فيها القلاع والمساجد والمدارس، وما تزال آثارها قائمة حتى اليوم شاهدة على عمق تاريخها وتنوع حضاراتها.
+      كما خضعت في بعض الفترات للحكم العثماني والإسباني، وهو ما أضفى على معمارها طابعاً فريداً.
+    </p>
+  </section>
+
+  <section id="attractions">
+    <h2>أبرز المعالم</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>القصبة</h3>
+        <p>حصن قديم يطل على البحر ويعكس التراث المعماري الفريد للجزيرة.</p>
+      </div>
+      <div class="card">
+        <h3>الكنيس اليهودي "الغريبة"</h3>
+        <p>أحد أقدم الكنس في العالم، ويزوره اليهود من كل أنحاء العالم.</p>
+      </div>
+      <div class="card">
+        <h3>الأسواق التقليدية</h3>
+        <p>تجربة فريدة للتسوق بين الحرفيين ومنتجات الزيتون والعطور.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2>معرض الصور</h2>
+    <div class="gallery-3d">
+      <div class="gallery-3d-container">
+        <img src="djerba1.jpg" alt="صورة 1">
+        <img src="djerba2.jpg" alt="صورة 2">
+        <img src="djerba3.jpg" alt="صورة 3">
+        <img src="djerba4.jpg" alt="صورة 4">
+        <img src="djerba6.jpg" alt="صورة 5">
+        <img src="djerba5.jpg" alt="صورة 6">
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>اتصل بنا</h2>
+    <p>
+      للمزيد من المعلومات، يرجى التواصل عبر البريد:
+      <a href="mailto:ameramergzam@gmail.com" style="color: var(--accent)">ameramergzam@gmail.com</a>
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2025 amer gzam. جميع الحقوق محفوظة.
+  </footer>
+  <!-- نهاية المحتوى -->
+
+  <footer>
+    &copy; 2025 amer gzam. جميع الحقوق محفوظة.
+  </footer>
+
+  <script>
+    const music = document.getElementById('bg-music');
+    const btn = document.getElementById('music-toggle-btn');
+
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+        btn.textContent = '🔊';  // صوت شغال
+      } else {
+        music.pause();
+        btn.textContent = '🔈';  // صوت مطفأ
+      }
+    }
+  </script>
+</body>
+</html>
+
+</body>
+</html>
